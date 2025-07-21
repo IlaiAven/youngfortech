@@ -1,0 +1,9 @@
+def union_sets(set1, set2):
+    list1= list(set1)
+    list2= list(set2)
+    new_list= list1+list2
+    new_set= set(new_list)
+    return new_set
+set1= {1,2,3,4,5}
+set2= {6,7,8,9,10}
+print(union_sets(set1, set2))

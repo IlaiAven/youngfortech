@@ -1,0 +1,9 @@
+def get_value(dictionary, key):
+    if key in dictionary:
+        print("the key is in the dictionary and its value is ", dictionary[key])
+    else:
+        print("the key isn't in the dictionary")
+
+dictionary= {"name": "Alice", "age": 30, "city": "New York"}
+key= input("Enter the key to check if its in the dictionary ")
+get_value(dictionary, key)

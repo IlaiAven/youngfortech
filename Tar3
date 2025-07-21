@@ -1,0 +1,11 @@
+def count_elements_in_tuples(list1):
+    count={}
+    for tup in list1:
+        for value in tup:
+            if value in count:
+                count[value]+=1
+            else:
+                count[value]=1
+    return count
+list1 = [('a', 'b', 'a', 'c'), ('b', 'b', 'd'), ('e',), ('a', 'd', 'd', 'e', 'f')]
+print(count_elements_in_tuples(list1))
