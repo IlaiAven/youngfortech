@@ -1,0 +1,28 @@
+password= "My$tr0ngP@ss21"
+count=0
+if len(password) > 8 and len(password) <= 11:
+    count+=1
+elif len(password)>12:
+    count+=2
+has_lower = any(x.islower() for x in password) 
+has_upper = any(x.isupper() for x in password)
+has_digit = any(x.isdigit() for x in password)
+has_special = any(not x.isalnum() for x in password)
+if has_lower:
+    count+=1
+if has_upper:
+    count+=1
+if has_digit:
+    count+=1
+if has_special:
+    count+=1
+common_passwords=["12345", "password", "admin", "qwerty"]
+found= any(common in common_passwords for common in common_passwords)
+if found:
+    count-=2
+if count<=0:
+    print("weak password")
+elif count>=1 and count<=3:
+    print("mid password")
+else:
+    print("strong password")
