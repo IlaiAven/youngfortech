@@ -1,0 +1,15 @@
+#פותח את הקובץ טקסט ששמרתי אצלי בוי אס קוד בשם סמפל
+with open("sample", "r") as file:
+    listed_file= list(file)
+N = int(input("write the number of top words you wish to see "))
+seen= {}
+for line in listed_file:
+    words= line.split()
+    for word in words:
+        if word in seen:
+            seen[word]+=1
+        else:
+            seen[word]=1
+sorted_items = sorted(seen.items(), key=lambda item: item[1], reverse=True)
+for top in sorted_items[:N]:
+    print(top)
